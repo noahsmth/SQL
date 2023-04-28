@@ -1,0 +1,42 @@
+--Create a bakery database.
+CREATE TABLE inventory (id integer primary key, category TEXT, name TEXT, price INTEGER, stock INTEGER);
+
+INSERT INTO inventory 
+
+VALUES
+(1, "donuts", "pink sprinkle", 2, 10),
+(2, "donuts", "white sprinkle", 2, 8),
+(3, "donuts", "cake", 1, 14),
+(4, "donuts", "blueberry cake", 1, 4),
+(5, "donuts", "chocolate icing", 2, 7),
+(6, "croissants", "butter", 1, 5),
+(7, "croissants", "chocolate", 2, 3),
+(8, "croissants", "ham n swiss", 2, 2),
+(9, "croissants", "almond", 2, 6),
+(10, "cookies", "sugar", 3, 12),
+(11, " cookies", "chocolate chip", 3, 12),
+(12, "cookies", "peanut butter", 3, 8),
+(13, "cookies", "ginger spice", 3, 15),
+(14, "cookies", "butter pecan", 3, 5),
+(15, "cakes", "vanilla", 10, 3),
+(16, "cakes", "chocolate", 10, 3),
+(17, "cakes", "carrot", 12, 2);
+
+--Display the database.
+SELECT * FROM inventory;
+
+--Display the database ordered by price.
+SELECT * FROM inventory 
+ORDER BY price;
+
+--Display the items that are low in stock.
+SELECT * FROM inventory 
+WHERE stock < 5;
+
+--Display the total number of items in stock.
+SELECT SUM (stock) FROM inventory;
+
+--Display total stock of items in the "cakes" category.
+SELECT SUM (stock) FROM inventory WHERE category = "cakes"
+
+
